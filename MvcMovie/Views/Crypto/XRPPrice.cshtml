@@ -1,11 +1,21 @@
 ﻿@model List<MvcMovie.Models.CryptonatorClass>
 
 @{
-    ViewData["Title"] = "BTCPrice";
+    ViewData["Title"] = "XRPPrice";
 }
     <meta http-equiv="refresh" content="30" />
 
-<h1>Ripple's XRP Price</h1>
+<h1 class="display-4">Ripple's XRP Price</h1>
+<style>
+    h1 {
+        color: black;
+        font-size:  inherit;
+    }
+
+    h2 {
+        color: darkred;
+    }
+    </style>
 
 <div class="text-center">
 
@@ -14,9 +24,10 @@
         <h2>
             <font size="25" face="Arial" color="black">
 
-                @Html.DisplayFor(modelItem => Model[i].ticker.@base) :
+                <h1>@Html.DisplayFor(modelItem => Model[i].ticker.@base) : </h1>
 
-                @Html.DisplayFor(modelItem => Model[i].ticker.price)
+                <h2>@Html.DisplayFor(modelItem => Model[i].ticker.price) USD</h2>
+
             </font>
         </h2>
     }
@@ -26,6 +37,7 @@
     </h2>
 
     <button class="align-baseline" color:black;border-radius:500px;" type="button" onclick="location.href = 'https://localhost:44316/Crypto/'">Return to the previous page</button>
+    <button class="align-baseline" color:black;border-radius:500px;" type="button" onclick="location.href = 'https://localhost:44316'">Return to home page</button>
 
 </div>
 

@@ -5,17 +5,14 @@
 }
     <meta http-equiv="refresh" content="30" />
 
-<h1>Bitcoin Price</h1>
+<h1 class="display-4">Bitcoin Price</h1>
 <style>
-    body {
-        background: rgb(30, 30, 30);
-    }
     h1 {
-        color: white;
+        color: black;
     }
 
     h2 {
-        color: rgb(156,104,110);
+        color: darkred;
     }
 </style>
 
@@ -28,12 +25,19 @@
 
                 <h1>@Html.DisplayFor(modelItem => Model[i].ticker.@base) : </h1>
 
-                <h2>@Html.DisplayFor(modelItem => Model[i].ticker.price)</h2>
+                <h2>@Html.DisplayFor(modelItem => Model[i].ticker.price) USD</h2>
 
             </font>
         </h2>
     }
 
+
+<h2>
+    <font size="1" face="Arial" color="grey">Price refreshes every 30 seconds</font>
+</h2>
+
     <button class="align-baseline" color:black;border-radius:500px;" type="button" onclick="location.href = 'https://localhost:44316/Crypto/'">Return to the previous page</button>
+
+    <button class="align-baseline" color:black;border-radius:500px;" type="button" onclick="location.href = 'https://localhost:44316'">Return to home page</button>
 </div>
 

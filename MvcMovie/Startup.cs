@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
+using MvcMovie.Data.Models;
 
 namespace MvcMovie
 {
@@ -35,6 +36,9 @@ namespace MvcMovie
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDbContext<CardealershipContext>(opt =>
+                     opt.UseSqlServer("Data Source=localhost;Initial Catalog=CarDealership;Integrated Security=True"));
 
             services.AddDbContext<MvcMovieContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));

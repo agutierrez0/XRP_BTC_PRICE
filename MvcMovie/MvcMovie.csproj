@@ -13,4 +13,9 @@
     <PackageReference Include="Nancy" Version="2.0.0" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\MvcMovie.Data\MvcMovie.Data.csproj" />
+  </ItemGroup>
+
 </Project>

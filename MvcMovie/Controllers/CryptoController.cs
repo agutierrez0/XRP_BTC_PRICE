@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data.Models;
 using MvcMovie.Models;
 using Nancy.Json;
 
@@ -14,10 +16,11 @@ namespace MvcMovie.Controllers
     public class CryptoController : Controller
     {
         private readonly MvcMovieContext _context;
+        private readonly CardealershipContext _carDealershipContext;
 
-        public CryptoController(MvcMovieContext context)
+        public CryptoController(CardealershipContext context)
         {
-            _context = context;
+            _carDealershipContext = context;
         }
         /*
         // GET: Movies
@@ -103,9 +106,34 @@ namespace MvcMovie.Controllers
             return View(listOfCryptos);
         }
 
+        public async Task<IActionResult> Cars()
+        {
+            /*
+            ServicePointManager.ServerCertificateValidationCallback += (o, c, ch, er) => true;
 
-            // GET: Movies/Create
-            public IActionResult Create()
+            List<Car> listOfCryptos = new List<Car>();
+
+            string baseURL = "http://localhost:61104/cars";
+            using (HttpClient client = new HttpClient())
+            using (HttpResponseMessage res = await client.GetAsync(baseURL))
+            using (HttpContent content = res.Content)
+            {
+                var entity = await content.ReadAsStringAsync();
+
+                JavaScriptSerializer serializer = new JavaScriptSerializer();
+                var entity2 = serializer.Deserialize<Car>(entity);
+
+                listOfCryptos.Add(entity2);
+            }
+
+            return View(listOfCryptos);
+            */
+            return View(await _carDealershipContext.Cars.ToListAsync());
+        }
+
+
+        // GET: Movies/Create
+        public IActionResult Create()
         {
             return View();
         }
