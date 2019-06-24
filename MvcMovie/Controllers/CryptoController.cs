@@ -11,11 +11,11 @@ using Nancy.Json;
 
 namespace MvcMovie.Controllers
 {
-    public class MoviesController : Controller
+    public class CryptoController : Controller
     {
         private readonly MvcMovieContext _context;
 
-        public MoviesController(MvcMovieContext context)
+        public CryptoController(MvcMovieContext context)
         {
             _context = context;
         }
