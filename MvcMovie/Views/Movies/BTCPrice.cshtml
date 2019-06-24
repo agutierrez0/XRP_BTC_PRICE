@@ -1,0 +1,30 @@
+﻿@model List<MvcMovie.Models.CryptonatorClass>
+
+@{
+    ViewData["Title"] = "BTCPrice";
+}
+    <meta http-equiv="refresh" content="30" />
+
+<h1>Bitcoin Price</h1>
+
+<div class="text-center">
+
+    @for (int i = 0; i < Model.Count(); i++)
+    {
+        <h2>
+            <font size="25" face="Arial" color="black">
+
+                @Html.DisplayFor(modelItem => Model[i].ticker.@base) :
+
+                @Html.DisplayFor(modelItem => Model[i].ticker.price)
+            </font>
+        </h2>
+    }
+
+    <h2>
+        <font size="1" face="Arial" color="grey">Price refreshes every 30 seconds</font>
+    </h2>
+
+    <button class="align-baseline" color:black;border-radius:500px;" type="button" onclick="location.href = 'https://localhost:44316/Movies/'">Return to the previous page</button>
+</div>
+

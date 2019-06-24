@@ -30,6 +30,7 @@ namespace MvcMovie.Controllers
         {
             List<CryptonatorClass> listOfCryptos = new List<CryptonatorClass>();
 
+            /*
             string baseURL = "https://api.cryptonator.com/api/ticker/btc-usd";
             using (HttpClient client = new HttpClient())
             using (HttpResponseMessage res = await client.GetAsync(baseURL))
@@ -43,6 +44,7 @@ namespace MvcMovie.Controllers
                 listOfCryptos.Add(entity2);
             }
 
+            
             string baseURL2 = "https://api.cryptonator.com/api/ticker/xrp-usd";
             using (HttpClient client = new HttpClient())
             using (HttpResponseMessage res = await client.GetAsync(baseURL2))
@@ -55,31 +57,55 @@ namespace MvcMovie.Controllers
 
                 listOfCryptos.Add(entity2);
             }
-
+            */
             return View(listOfCryptos);
 
         }
 
         // GET: Movies/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> BTCPrice()
         {
-            if (id == null)
+            List<CryptonatorClass> listOfCryptos = new List<CryptonatorClass>();
+
+            string baseURL = "https://api.cryptonator.com/api/ticker/btc-usd";
+            using (HttpClient client = new HttpClient())
+            using (HttpResponseMessage res = await client.GetAsync(baseURL))
+            using (HttpContent content = res.Content)
             {
-                return NotFound();
+                var entity = await content.ReadAsStringAsync();
+
+                JavaScriptSerializer serializer = new JavaScriptSerializer();
+                var entity2 = serializer.Deserialize<CryptonatorClass>(entity);
+
+                listOfCryptos.Add(entity2);
             }
 
-            var movie = await _context.Movie
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (movie == null)
-            {
-                return NotFound();
-            }
-
-            return View(movie);
+            return View(listOfCryptos);
         }
 
-        // GET: Movies/Create
-        public IActionResult Create()
+        public async Task<IActionResult> XRPPrice()
+        {
+            List<CryptonatorClass> listOfCryptos = new List<CryptonatorClass>();
+
+            string baseURL = "https://api.cryptonator.com/api/ticker/xrp-usd";
+            using (HttpClient client = new HttpClient())
+            using (HttpResponseMessage res = await client.GetAsync(baseURL))
+            using (HttpContent content = res.Content)
+            {
+                var entity = await content.ReadAsStringAsync();
+
+                JavaScriptSerializer serializer = new JavaScriptSerializer();
+                var entity2 = serializer.Deserialize<CryptonatorClass>(entity);
+
+                listOfCryptos.Add(entity2);
+            }
+
+            return View(listOfCryptos);
+        }
+
+
+            // GET: Movies/Create
+            public IActionResult Create()
         {
             return View();
         }

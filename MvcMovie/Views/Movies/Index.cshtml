@@ -6,22 +6,6 @@
 <div class="text-center">
     <h1>CRYPTO CURRENCY</h1>
 
-    @for (int i = 0; i < Model.Count(); i++)
-    {
-            <h2>
-                <font size="25" face="Arial" color="black">
-
-                    @Html.DisplayFor(modelItem => Model[i].ticker.@base)
-
-                    @Html.DisplayFor(modelItem => Model[i].ticker.price)
-                </font>
-            </h2>   
-    }
-    <h2>
-        <font size="1" face="Arial" color="grey">Prices refresh every 30 seconds automatically</font>
-    </h2>
-
-
-    <button style=" color:black;border-radius:50px;" type="button" onclick="location.reload()">Use me to refresh the page</button>
-    <button style=" color:black;border-radius:500px;" type="button" onclick="alert('You pressed the button.')">Use me to see an alert</button>
+    <button style=" color:black;border-radius:100px;" type="button" onclick="location.href = 'https://localhost:44316/Movies/BTCPRICE'">BTC</button>
+    <button style=" color:black;border-radius:100px;" type="button" onclick="location.href = 'https://localhost:44316/Movies/XRPPRICE'">XRP</button>
 </div>

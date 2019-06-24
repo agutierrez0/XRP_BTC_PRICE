@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MvcMovie.Controllers
 {
-    public class HelloWorldController : Controller
+    public class TimesTestController : Controller
     { // 
         //GET: /HelloWorld/
 

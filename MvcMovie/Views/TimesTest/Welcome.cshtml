@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<h2>Welcome</h2>
+
+<form asp-controller="HelloWorld" asp-action="Welcome">
+    <p>
+        How many times? <input type="text" name="numTimes">
+    </p>
+
+    <p>
+        Input? <input type="text" name="name">
+        <input type="submit" value="GO" />
+    </p>
+</form>
+
+
+<ul>
+    @for (int i=0; i < (int)ViewData["NumTimes"]; i++)
+    {
+    <li>@ViewData["Message"]</li>
+    }
+</ul>
