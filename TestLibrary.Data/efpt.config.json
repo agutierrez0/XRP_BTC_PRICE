@@ -1,0 +1,1 @@
+﻿{"ContextClassName":"SystemmonitorContext","DefaultDacpacSchema":null,"IdReplace":false,"IncludeConnectionString":false,"OutputPath":"Models","ProjectRootNamespace":"TestLibrary.Data","SelectedToBeGenerated":0,"Tables":[{"HasPrimaryKey":true,"Name":"dbo.BuildIDVersionHistory"}],"UseDatabaseNames":false,"UseFluentApiOnly":true,"UseHandleBars":false,"UseInflector":true}

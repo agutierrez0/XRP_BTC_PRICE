@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MvcMovie.Data\MvcMovie.Data.csproj" />
+    <ProjectReference Include="..\TestLibrary2.Data\TestLibrary2.Data.csproj" />
   </ItemGroup>
 
 </Project>

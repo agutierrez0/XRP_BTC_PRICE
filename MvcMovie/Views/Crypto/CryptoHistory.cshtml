@@ -1,0 +1,40 @@
+﻿@model List<MvcMovie.Data.Models.CryptoPrice>
+
+@{
+    ViewData["Title"] = "CryptoHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CryptoHistory</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].CryptoName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].TimeTracked)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CryptoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeTracked)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
